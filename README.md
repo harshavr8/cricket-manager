@@ -51,7 +51,7 @@ mongodb://localhost:27017/cricketdb
 
 
  ```
- mongodb+srv://Criuser:cricket@cluster0.ck4gnc1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+ mongodb+srv://Cricket_user:cricket@cluster0.ck4gnc1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
  ```
 
  Simply copy this and paste it as your `MONGODB_URI` value in the `.env` file.
