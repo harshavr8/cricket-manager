@@ -12,27 +12,11 @@ Users can create teams, add players, schedule matches, and view stats.
 
 ---
 
-## 🗂 Project Structure
-```
-project-root/
-│
-├── client/        → React frontend
-├── server/        → Express backend
-│   ├── models/    → Mongoose schemas
-│   ├── routes/    → API routes
-│   ├── controllers/ → Business logic
-│   ├── .env.example
-│   └── server.js
-└── README.md
-```
-
----
-
 ## 🚀 Setup Instructions
 
 ### 1️⃣ Clone the repo
 ```bash
-git clone https://github.com/harshavr8/cricket-manager.git
+git clone https://github.com/yourusername/cricket-manager.git
 cd cricket-manager
 ```
 
@@ -44,7 +28,39 @@ cd server
 npm install
 ```
 
-#### Create `.env` file
+---
+
+### 3️⃣ Setup MongoDB Atlas (Recommended)
+
+1. Go to [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+2. Create a **free cluster**
+3. Add a **database user** with username and password
+4. Allow access from anywhere (IP: `0.0.0.0/0`)
+5. Copy your connection string from **Connect → Drivers** tab. Example:
+   ```
+   mongodb+srv://<user>:<password>@<cluster>.mongodb.net/cricketdb
+   ```
+
+You can also use local MongoDB if you already have it installed:
+```
+mongodb://localhost:27017/cricketdb
+```
+
+ 💡 **Note:**  
+ If you are unable to set up MongoDB Atlas on your own, you can use the following shared connection URI (preconfigured for testing):
+
+ ```
+ mongodb+srv://Criuser:cricket@cluster0.ck4gnc1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+ ```
+
+ Simply copy this and paste it as your `MONGODB_URI` value in the `.env` file.
+
+ ⚠️ This URI is for demonstration/testing only. 
+
+
+---
+
+### 4️⃣ Create `.env` file
 ```bash
 cp .env.example .env
 ```
@@ -60,20 +76,21 @@ MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/cricketdb
 PORT=4000
 ```
 
-#### Start server
+---
+
+### 5️⃣ Start Backend
 ```bash
 npm run dev
 ```
-
 Server runs on **http://localhost:4000**  
-Check API health:
+Health check endpoint:
 ```
 http://localhost:4000/api/health
 ```
 
 ---
 
-### 3️⃣ Setup Frontend (Client)
+### 6️⃣ Setup Frontend (Client)
 ```bash
 cd ../client
 npm install
@@ -107,18 +124,6 @@ App runs on **http://localhost:5173**
 
 ---
 
-## 🌐 MongoDB Atlas Quick Setup
-1. Go to [MongoDB Atlas](https://www.mongodb.com/atlas/database)
-2. Create a **free cluster**
-3. Add a **database user** and **allow access from anywhere (0.0.0.0/0)**  
-4. Copy the connection string:
-   ```
-   mongodb+srv://<user>:<password>@<cluster>.mongodb.net/cricketdb
-   ```
-5. Paste it into your `.env`
-
----
-
 ## 🧪 Optional: Seed Sample Data
 You can create initial sample players/teams directly through the UI  
 or run a simple seed script (if you added one later):
@@ -134,7 +139,6 @@ npm run seed
 | `npm run dev` | Run in dev mode (server or client) |
 | `npm start` | Run production build |
 | `npm run build` | Build frontend for deployment |
-
 
 ---
 
