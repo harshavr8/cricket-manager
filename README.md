@@ -47,7 +47,8 @@ mongodb://localhost:27017/cricketdb
 ```
 
  💡 **Note:**  
- If you are unable to set up MongoDB Atlas on your own, you can use the following shared connection URI (preconfigured for testing):
+  If you don’t have time to set up your own MongoDB Atlas cluster or want to quickly check the existing demo database, you can use this shared connection URI:
+
 
  ```
  mongodb+srv://Criuser:cricket@cluster0.ck4gnc1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
